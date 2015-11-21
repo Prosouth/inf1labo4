@@ -22,31 +22,32 @@
 
 using namespace std;
 
+// Constantes
+const unsigned int TAILLE_MATRICE_MAX = 50;
+const unsigned short RANDOM_MIN = 1;
+const unsigned short RANDOM_MAX = 4;
+const unsigned int NB_EXP_MIN = 1000;
+const unsigned int NB_EXP_MAX = 10000;
+const unsigned int LARGEUR_COLONNE_1 = 3;
+const unsigned int LARGEUR_COLONNE_2 = 20;
+
 int main() {
-   // Constantes
-   const int TAILLE_MATRICE_MAX = 50;
-   const short RANDOM_MIN = 1;
-   const short RANDOM_MAX = 4;
-   const int NB_EXP_MIN = 1000;
-   const int NB_EXP_MAX = 10000;
-   const int LARGEUR_COLONNE_1 = 3;
-   const int LARGEUR_COLONNE_2 = 20;
 
    // Variables
-   int nbExperiences;
-   int Ox;
-   int Oy;
+   unsigned int nbExperiences;
+   int coordonneeDeX;
+   int coordonneeDeY;
    bool murHaut;
    bool murBas;
    bool murDroite;
    bool murGauche;
-   int randDeplacement;
-   int nombreDeplacements = 0;
-   int nombreDeplacementsTotal = 0;
+   unsigned short randDeplacement;
+   unsigned int nombreDeplacements = 0;
+   unsigned int nombreDeplacementsTotal = 0;
    int limiteBas;
-   int limiteHaut;
+   unsigned int limiteHaut;
+   unsigned int limiteDroite;
    int limiteGauche;
-   int limiteDroite;
    double moyenneDeplacement;
 
    do
@@ -76,8 +77,8 @@ int main() {
 
       for (int i = 0; i < nbExperiences; i++)
       {
-         Ox = 0;
-         Oy = 0;
+         coordonneeDeX = 0;
+         coordonneeDeY = 0;
          murBas = false;
          murDroite = false;
          murGauche = false;
@@ -94,51 +95,51 @@ int main() {
             {
                case 1:
                {
-                  Ox++;
+                  coordonneeDeX++;
                   break;
                }
                case 2:
                {
-                  Ox--;
+                  coordonneeDeX--;
                   break;
                }
                case 3:
                {
-                  Oy++;
+                  coordonneeDeY++;
                   break;
                }
                case 4:
                {
-                  Oy--;
+                  coordonneeDeY--;
                   break;
                }
             }
             nombreDeplacements++;
 
 
-            if (Ox == limiteDroite)
+            if (coordonneeDeX == limiteDroite)
             {
                murDroite = 1;
-               Ox--;
+               coordonneeDeX--;
                nombreDeplacements++;
             }
 
-            if (Ox == limiteGauche)
+            if (0x == limiteGauche)
             {
                murGauche = 1;
-               Ox++;
+               coordonneeDeX++;
                nombreDeplacements++;
             }
-            if (Oy == limiteHaut)
+            if (coordonneeDeY == limiteHaut)
             {
                murHaut = 1;
-               Oy--;
+               coordonneeDeY--;
                nombreDeplacements++;
             }
-            if (Oy == limiteBas)
+            if (coordonneeDeY == limiteBas)
             {
                murBas = 1;
-               Oy++;
+               coordonneeDeY++;
                nombreDeplacements++;
             }  
          }                
