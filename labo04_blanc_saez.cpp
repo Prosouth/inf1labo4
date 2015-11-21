@@ -152,5 +152,8 @@ int main() {
       moyenneDeplacement = 0;
       nombreDeplacementsTotal = 0;
    }
+   
+   cout << "Appuyez sur une touche pour continuer...";
+   cin.get();
    return EXIT_SUCCESS;
 }
