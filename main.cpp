@@ -108,6 +108,7 @@ int main()
                Ox--;
                compteurRobot++;
             }
+            
             if(Ox == 0)
             {
                murGauche = 1;
