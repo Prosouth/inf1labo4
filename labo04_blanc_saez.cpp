@@ -87,7 +87,7 @@ int main() {
          nombreDeplacements = 0;
          moyenneDeplacement = 0;
 
-         while (!murBas || !murHaut || !murDroite || !murGauche)
+         while (!murBas or !murHaut or !murDroite or !murGauche)
          {
             randDeplacement = rand() % (RANDOM_MAX - RANDOM_MIN + 1) + RANDOM_MIN;
 
