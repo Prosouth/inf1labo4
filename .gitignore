@@ -2,5 +2,5 @@
 *
 
 # But not these files...
-!main.cpp
+!labo04_blanc_saez.cpp
 !.gitignore
