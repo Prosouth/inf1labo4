@@ -63,7 +63,7 @@ int main() {
 
       if ((nbExperiences < NB_EXP_MIN or nbExperiences > NB_EXP_MAX) and cin.fail() == false)
       {
-         cout << "La valeur que vous avez entree n'est pas comprise dans l'intervale"
+         cout << "La valeur que vous avez entree n'est pas comprise dans l'intervalle"
                  << endl;
       }
    }
