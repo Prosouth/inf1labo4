@@ -43,10 +43,10 @@ int main() {
    int randDeplacement;
    int nombreDeplacements = 0;
    int nombreDeplacementsTotal = 0;
-   int limite_bas;
-   int limite_haut;
-   int limite_gauche;
-   int limite_droite;
+   int limiteBas;
+   int limiteHaut;
+   int limiteGauche;
+   int limiteDroite;
    double moyenneDeplacement;
 
    do
@@ -71,8 +71,8 @@ int main() {
 
    for (int tailleMatrice = 2; tailleMatrice <= TAILLE_MATRICE_MAX; tailleMatrice += 2)
    {
-      limite_droite = limite_haut = tailleMatrice / 2;
-      limite_gauche = limite_bas = tailleMatrice / -2;
+      limiteDroite = limiteHaut = tailleMatrice / 2;
+      limiteGauche = limiteBas = tailleMatrice / -2;
 
       for (int i = 0; i < nbExperiences; i++)
       {
@@ -116,26 +116,26 @@ int main() {
             nombreDeplacements++;
 
 
-            if (Ox == limite_droite)
+            if (Ox == limiteDroite)
             {
                murDroite = 1;
                Ox--;
                nombreDeplacements++;
             }
 
-            if (Ox == limite_gauche)
+            if (Ox == limiteGauche)
             {
                murGauche = 1;
                Ox++;
                nombreDeplacements++;
             }
-            if (Oy == limite_haut)
+            if (Oy == limiteHaut)
             {
                murHaut = 1;
                Oy--;
                nombreDeplacements++;
             }
-            if (Oy == limite_bas)
+            if (Oy == limiteBas)
             {
                murBas = 1;
                Oy++;
