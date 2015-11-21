@@ -96,28 +96,26 @@ int main() {
                case 1:
                {
                   Ox++;
-                  nombreDeplacements++;
                   break;
                }
                case 2:
                {
                   Ox--;
-                  nombreDeplacements++;
                   break;
                }
                case 3:
                {
                   Oy++;
-                  nombreDeplacements++;
                   break;
                }
                case 4:
                {
                   Oy--;
-                  nombreDeplacements++;
                   break;
                }
             }
+            nombreDeplacements++;
+
 
             if (Ox == limite_droite)
             {
