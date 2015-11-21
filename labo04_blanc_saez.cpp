@@ -15,8 +15,6 @@
  Compilateur : g++ 5.2.0
  -----------------------------------------------------------------------------------
  */
-
-
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
@@ -25,7 +23,6 @@
 using namespace std;
 
 int main() {
-
    // Constantes
    const int TAILLE_MATRICE_MAX = 50;
    const short RANDOM_MIN = 1;
@@ -33,7 +30,7 @@ int main() {
    const int NB_EXP_MIN = 1000;
    const int NB_EXP_MAX = 10000;
    const int LARGEUR_COLONNE_1 = 3;
-   const int LARGEUR_COLONNE_2 = 25;
+   const int LARGEUR_COLONNE_2 = 20;
 
    // Variables
    int nbExperiences;
