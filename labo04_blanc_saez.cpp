@@ -23,31 +23,31 @@
 using namespace std;
 
 // Constantes
-const unsigned int TAILLE_MATRICE_MAX = 50;
 const unsigned short RANDOM_MIN = 1;
 const unsigned short RANDOM_MAX = 4;
 const unsigned int NB_EXP_MIN = 1000;
 const unsigned int NB_EXP_MAX = 10000;
 const unsigned int LARGEUR_COLONNE_1 = 3;
 const unsigned int LARGEUR_COLONNE_2 = 20;
+const unsigned int TAILLE_MATRICE_MAX = 50;
 
 int main() {
 
    // Variables
+   unsigned short randDeplacement;
+   unsigned int nombreDeplacements = 0;
+   unsigned int nombreDeplacementsTotal = 0;
    unsigned int nbExperiences;
+   unsigned int limiteHaut;
+   unsigned int limiteDroite;
+   int limiteBas;
+   int limiteGauche;
    int coordonneeDeX;
    int coordonneeDeY;
    bool murHaut;
    bool murBas;
    bool murDroite;
    bool murGauche;
-   unsigned short randDeplacement;
-   unsigned int nombreDeplacements = 0;
-   unsigned int nombreDeplacementsTotal = 0;
-   int limiteBas;
-   unsigned int limiteHaut;
-   unsigned int limiteDroite;
-   int limiteGauche;
    double moyenneDeplacement;
 
    do
@@ -65,7 +65,7 @@ int main() {
       if ((nbExperiences < NB_EXP_MIN or nbExperiences > NB_EXP_MAX) and cin.fail() == false)
       {
          cout << "La valeur que vous avez entree n'est pas comprise dans l'intervalle"
-                 << endl;
+              << endl;
       }
    }
    while ((nbExperiences < NB_EXP_MIN or nbExperiences > NB_EXP_MAX) and cin.fail() == false);
@@ -147,8 +147,8 @@ int main() {
       moyenneDeplacement = (nombreDeplacementsTotal / nbExperiences);
 
       cout << "Matrice: " << setw(LARGEUR_COLONNE_1) 
-              << tailleMatrice << " X " << tailleMatrice << " est de : "
-              << setw(LARGEUR_COLONNE_2) << moyenneDeplacement << endl;
+           << tailleMatrice << " X " << tailleMatrice << " est de : "
+           << setw(LARGEUR_COLONNE_2) << moyenneDeplacement << endl;
       moyenneDeplacement = 0;
       nombreDeplacementsTotal = 0;
    }
