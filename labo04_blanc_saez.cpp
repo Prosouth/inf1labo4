@@ -77,8 +77,8 @@ int main() {
 
       for (int i = 0; i < nbExperiences; i++)
       {
-         Ox = (tailleMatrice / 2);
-         Oy = (tailleMatrice / 2);
+         Ox = 0;
+         Oy = 0;
          murBas = false;
          murDroite = false;
          murGauche = false;
@@ -143,10 +143,8 @@ int main() {
                murBas = 1;
                Oy++;
                compteurRobot++;
-            }
-            
-         }
-                
+            }  
+         }                
       }
       moyenneDeplacement = (nombreDeplacements / nbExperiences);
 
