@@ -41,7 +41,7 @@ int main() {
    bool murDroite;
    bool murGauche;
    int randDeplacement;
-   int nombreDeplacements;
+   int nombreDeplacements = 0;
    int nombreDeplacementsTotal = 0;
    int limite_bas;
    int limite_haut;
