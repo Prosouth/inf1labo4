@@ -60,7 +60,6 @@ int main() {
       {
          cin.clear();
          cin.ignore(numeric_limits<streamsize>::max(), '\n');
-
       }
 
       if ((nbExperiences < NB_EXP_MIN or nbExperiences > NB_EXP_MAX) and cin.fail() == false)
@@ -73,11 +72,6 @@ int main() {
 
    for (tailleMatrice; tailleMatrice <= TAILLE_MATRICE_MAX; tailleMatrice += 2)
    {
-      murBas = false;
-      murDroite = false;
-      murGauche = false;
-      murHaut = false;
-      nombreDeplacements = 0;
       limite_droite = limite_haut = tailleMatrice / 2;
       limite_gauche = limite_bas = tailleMatrice / -2;
 
@@ -85,8 +79,15 @@ int main() {
       {
          Ox = (tailleMatrice / 2);
          Oy = (tailleMatrice / 2);
+         murBas = false;
+         murDroite = false;
+         murGauche = false;
+         murHaut = false;
+         nombreDeplacements += compteurRobot;
+         compteurRobot = 0;
+         moyenneDeplacement = 0;
 
-         while (!murBas and !murHaut and !murDroite and !murGauche)
+         while (!murBas || !murHaut || !murDroite || !murGauche)
          {
             randDeplacement = rand() % (RANDOM_MAX - RANDOM_MIN + 1) + RANDOM_MIN;
 
@@ -112,7 +113,7 @@ int main() {
                }
                case 4:
                {
-                  Oy++;
+                  Oy--;
                   compteurRobot++;
                   break;
                }
@@ -143,17 +144,17 @@ int main() {
                Oy++;
                compteurRobot++;
             }
-
+            
          }
-         
-         nombreDeplacements += compteurRobot;
-         
+                
       }
       moyenneDeplacement = (nombreDeplacements / nbExperiences);
 
       cout << "Matrice: " << setw(LARGEUR_COLONNE_1) 
               << tailleMatrice << " X " << tailleMatrice << " est de : "
               << setw(LARGEUR_COLONNE_2) << moyenneDeplacement << endl;
+      moyenneDeplacement = 0;
+      nombreDeplacements = 0;
    }
    return EXIT_SUCCESS;
 }
