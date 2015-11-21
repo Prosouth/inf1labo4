@@ -86,7 +86,7 @@ int main() {
          Ox = (tailleMatrice / 2);
          Oy = (tailleMatrice / 2);
 
-         do
+         while (!murBas and !murHaut and !murDroite and !murGauche)
          {
             randDeplacement = rand() % (RANDOM_MAX - RANDOM_MIN + 1) + RANDOM_MIN;
 
@@ -145,13 +145,13 @@ int main() {
             }
 
          }
-         while (!murBas and !murHaut and !murDroite and !murGauche);
+         
          nombreDeplacements += compteurRobot;
          
       }
       moyenneDeplacement = (nombreDeplacements / nbExperiences);
 
-      cout << "Matrice: " << setw(LARGEUR_COLONNE_1) << 
+      cout << "Matrice: " << setw(LARGEUR_COLONNE_1) 
               << tailleMatrice << " X " << tailleMatrice << " est de : "
               << setw(LARGEUR_COLONNE_2) << moyenneDeplacement << endl;
    }
