@@ -34,7 +34,6 @@ int main() {
 
    // Variables
    int nbExperiences;
-   int tailleMatrice = 2;
    int Ox;
    int Oy;
    bool murHaut;
@@ -43,7 +42,7 @@ int main() {
    bool murGauche;
    int randDeplacement;
    int nombreDeplacements;
-   int nombreDeplacementsTotal;
+   int nombreDeplacementsTotal = 0;
    int limite_bas;
    int limite_haut;
    int limite_gauche;
@@ -70,7 +69,7 @@ int main() {
    }
    while ((nbExperiences < NB_EXP_MIN or nbExperiences > NB_EXP_MAX) and cin.fail() == false);
 
-   for (tailleMatrice; tailleMatrice <= TAILLE_MATRICE_MAX; tailleMatrice += 2)
+   for (int tailleMatrice = 2; tailleMatrice <= TAILLE_MATRICE_MAX; tailleMatrice += 2)
    {
       limite_droite = limite_haut = tailleMatrice / 2;
       limite_gauche = limite_bas = tailleMatrice / -2;
