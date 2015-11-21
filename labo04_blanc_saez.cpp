@@ -27,6 +27,10 @@ int main() {
    const int TAILLE_MATRICE_MAX = 50;
    const short RANDOM_MIN = 1;
    const short RANDOM_MAX = 4;
+   const int NB_EXP_MIN = 1000;
+   const int NB_EXP_MAX = 10000;
+   const int LARGEUR_COLONNE_1 = 3;
+   const int LARGEUR_COLONNE_2 = 25;
 
    // Variables
    int nbExperiences;
@@ -59,13 +63,13 @@ int main() {
 
       }
 
-      if ((nbExperiences < 1000 or nbExperiences > 10000) and cin.fail() == false)
+      if ((nbExperiences < NB_EXP_MIN or nbExperiences > NB_EXP_MAX) and cin.fail() == false)
       {
          cout << "La valeur que vous avez entree n'est pas comprise dans l'intervale"
                  << endl;
       }
    }
-   while ((nbExperiences < 1000 or nbExperiences > 10000) and cin.fail() == false);
+   while ((nbExperiences < NB_EXP_MIN or nbExperiences > NB_EXP_MAX) and cin.fail() == false);
 
    for (tailleMatrice; tailleMatrice <= TAILLE_MATRICE_MAX; tailleMatrice += 2)
    {
@@ -147,9 +151,9 @@ int main() {
       }
       moyenneDeplacement = (nombreDeplacements / nbExperiences);
 
-      cout << "La moyenne de nombre de deplacements du robot pour une matrice de taille "
+      cout << "Matrice: " << setw(LARGEUR_COLONNE_1) << 
               << tailleMatrice << " X " << tailleMatrice << " est de : "
-              << moyenneDeplacement << endl;
+              << setw(LARGEUR_COLONNE_2) << moyenneDeplacement << endl;
    }
    return EXIT_SUCCESS;
 }
