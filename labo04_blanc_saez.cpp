@@ -1,15 +1,18 @@
 /*
  -----------------------------------------------------------------------------------
- Laboratoire : INF01
+ Laboratoire : 04
  Fichier     : Labo_04_blanc_saez.cpp
  Auteur(s)   : Julien Blanc et Sébastien Saez
  Date        : 19.11.2015
 
- But         : <à compléter>
+ But         : Le but de l'application est de simuler le nombre de déplacements que 
+ *             ferait un robot sur les ségments d'une matrice de N x N. A chaque
+ *             fois que le robot heurte les bords de la matrice, il fait se déplace
+ *             d'un segment dans le sens opposé.
 
- Remarque(s) : <à compléter>
+ Remarque(s) : 
 
- Compilateur : MinGW-g++ 4.8.1
+ Compilateur : g++ 5.2.0
  -----------------------------------------------------------------------------------
  */
 
@@ -42,8 +45,8 @@ int main() {
    bool murDroite;
    bool murGauche;
    int randDeplacement;
-   int compteurRobot;
    int nombreDeplacements;
+   int nombreDeplacementsTotal;
    int limite_bas;
    int limite_haut;
    int limite_gauche;
@@ -83,8 +86,8 @@ int main() {
          murDroite = false;
          murGauche = false;
          murHaut = false;
-         nombreDeplacements += compteurRobot;
-         compteurRobot = 0;
+         nombreDeplacementsTotal += nombreDeplacements;
+         nombreDeplacements = 0;
          moyenneDeplacement = 0;
 
          while (!murBas || !murHaut || !murDroite || !murGauche)
@@ -96,25 +99,25 @@ int main() {
                case 1:
                {
                   Ox++;
-                  compteurRobot++;
+                  nombreDeplacements++;
                   break;
                }
                case 2:
                {
                   Ox--;
-                  compteurRobot++;
+                  nombreDeplacements++;
                   break;
                }
                case 3:
                {
                   Oy++;
-                  compteurRobot++;
+                  nombreDeplacements++;
                   break;
                }
                case 4:
                {
                   Oy--;
-                  compteurRobot++;
+                  nombreDeplacements++;
                   break;
                }
             }
@@ -123,36 +126,36 @@ int main() {
             {
                murDroite = 1;
                Ox--;
-               compteurRobot++;
+               nombreDeplacements++;
             }
 
             if (Ox == limite_gauche)
             {
                murGauche = 1;
                Ox++;
-               compteurRobot++;
+               nombreDeplacements++;
             }
             if (Oy == limite_haut)
             {
                murHaut = 1;
                Oy--;
-               compteurRobot++;
+               nombreDeplacements++;
             }
             if (Oy == limite_bas)
             {
                murBas = 1;
                Oy++;
-               compteurRobot++;
+               nombreDeplacements++;
             }  
          }                
       }
-      moyenneDeplacement = (nombreDeplacements / nbExperiences);
+      moyenneDeplacement = (nombreDeplacementsTotal / nbExperiences);
 
       cout << "Matrice: " << setw(LARGEUR_COLONNE_1) 
               << tailleMatrice << " X " << tailleMatrice << " est de : "
               << setw(LARGEUR_COLONNE_2) << moyenneDeplacement << endl;
       moyenneDeplacement = 0;
-      nombreDeplacements = 0;
+      nombreDeplacementsTotal = 0;
    }
    return EXIT_SUCCESS;
 }
