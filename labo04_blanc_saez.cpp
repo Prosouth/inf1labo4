@@ -124,7 +124,7 @@ int main() {
                nombreDeplacements++;
             }
 
-            if (0x == limiteGauche)
+            if (coordonneeDeX == limiteGauche)
             {
                murGauche = 1;
                coordonneeDeX++;
