@@ -36,11 +36,11 @@
 using namespace std;
 
 // Constantes
+const int TAILLE_MATRICE_MAX = 50; //taille maximale de la matrice
 const unsigned short RANDOM_MIN = 1;   //valeur minimum du random
 const unsigned short RANDOM_MAX = 4;   //valeur maximum du random
 const unsigned int NB_EXP_MIN = 1000;  //nombre minimum d'expériences possible
 const unsigned int NB_EXP_MAX = 10000; //nombre maximum d'expériences possible
-const unsigned int TAILLE_MATRICE_MAX = 50; //taille maximale de la matrice
 const unsigned int MOITIER_SUPERIEURE_MATRICE = 2; /*divise la matrice en deux et  
                                                      définit sa partie supérieure*/
 const int MOITIER_INFERIEURE_MATRICE = -2;         /*divise la matrice en deux et
@@ -49,11 +49,11 @@ const int MOITIER_INFERIEURE_MATRICE = -2;         /*divise la matrice en deux e
 int main() {
 
    // Variables
-   unsigned short randDeplacement;  //valeur aléatoire générée par le déplacement
    unsigned int nbExperiences;   //saisie utilisateur
    unsigned int nombreDeplacements = 0;
-   unsigned int limiteHaut;   //limite supérieure de la matrice
-   unsigned int limiteDroite; //limite droite de la matrice
+   int randDeplacement;  //valeur aléatoire générée par le déplacement
+   int limiteHaut;   //limite supérieure de la matrice
+   int limiteDroite; //limite droite de la matrice
    int limiteBas;    //limite inférieure de la matrice
    int limiteGauche; //limite gauche de la matrice
    int coordonneeDeX;   
@@ -102,7 +102,7 @@ int main() {
  
    // affichage de la métadonnée du tableau
    cout << "Taille de la matrice" << setw(36) 
-        << "Moyenne du nombre de deplacement" << endl;
+        << "Moyenne du nombre de deplacements" << endl;
    cout << setw(53) << "du robot (nombre de sauts)" << endl;
    cout << setfill('-') << setw(56) << "-" << setfill(' ') << endl << endl;
 
@@ -116,7 +116,7 @@ int main() {
       
       /* Boucle permettant d'effectuer le nombre d'expériences désirées par
          l'utilisateur */
-      for (int i = 0; i < nbExperiences; i++)
+      for (unsigned int i = 0; i < nbExperiences; i++)
       {
          coordonneeDeX = 0;
          coordonneeDeY = 0;
